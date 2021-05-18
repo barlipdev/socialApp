@@ -1,21 +1,19 @@
-class User {
-    constructor(id, name, surname, img, isActive, friendsArray) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.img = img;
-        this.isActive = isActive;
-        this.friendsArray = friendsArray;
-    }
+import { User } from './model/model.js';
 
-    addFriend(user) {
-        this.friendsArray.push(user);
-    }
-    getAllFriends() {
-        return this.friendsArray;
-    }
-}
+function genId() {
+    return '_' + Math.random().toString(36).substr(2, 9);
+};
 
 function getUser(idUser) {
     //TO DO create connection with API
+}
+
+function register(email, name, surname, login, password, img) {
+    let user = new User(genId(), name, surname, email, login, password, img, true, new Array())
+        //TO DO send request to API (adding user to database)
+    return user;
+}
+
+function login(email, password) {
+    //TO DO find user in databse and return
 }
