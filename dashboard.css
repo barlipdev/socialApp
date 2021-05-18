@@ -3,11 +3,19 @@
     padding: 1rem 0;
     border-right: 1px solid #e6ecf3;
     width: 300px;
-    height: 100%;
+    height: auto;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
+}
+
+.users-container label {
+    text-align: left;
+    font-weight: lighter;
+    font-size: 15px;
+    margin-left: 15px;
+    margin-bottom: 5px;
 }
 
 
@@ -95,5 +103,8 @@
     }
     .users-container {
         width: 60px;
+    }
+    .users-container label {
+        display: none;
     }
 }

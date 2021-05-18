@@ -9,8 +9,7 @@ function getUser(idUser) {
 }
 
 function register(email, name, surname, login, password, img) {
-    let user = new User(genId(), name, surname, email, login, password, img, true, new Array())
-        //TO DO send request to API (adding user to database)
+    //TO DO send request to API (adding user to database)
     return user;
 }
 
