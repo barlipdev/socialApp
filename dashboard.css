@@ -42,8 +42,8 @@
 
 .users .person.active-user {
     background-color: #ffffff;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f9fb), to(#ffffff));
-    background-image: -webkit-linear-gradient(right, #f7f9fb, #ffffff);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ececec), to(#ffffff));
+    background-image: -webkit-linear-gradient(right, #ececec, #ffffff);
 }
 
 .users .person:last-child {

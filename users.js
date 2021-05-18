@@ -1,4 +1,7 @@
+import { Repository } from './repo/repository.js'
+
 var allFriends = document.querySelectorAll(".person");
+var repository = new Repository();
 
 allFriends.forEach((friend) => {
     friend.addEventListener("click", () => {
@@ -11,3 +14,7 @@ allFriends.forEach((friend) => {
         })
     })
 })
+
+function loadAllFriends(userid) {
+    return repository.getFriendsByUserId(userid);
+}
