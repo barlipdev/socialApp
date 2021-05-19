@@ -5,6 +5,7 @@
     <link href="dashboard.css" rel="stylesheet">
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
     <link href="chat.css" rel="stylesheet">
+    <link href='https://css.gg/arrow-right-r.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 
@@ -22,86 +23,90 @@
         <div class="collapse navbar-collapse" id="navbar-list-4">
             <ul class="navbar-nav">
                 <li>
-                    <a name="navbarProfileImg" class="navbar-profile-img online" href="#">
-                        <img src="https://avatars.dicebear.com/v2/identicon/82b375a8c1041a6b0ac0f81625d441dc.svg" width="40" height="40" class="rounded-circle">
-                    </a>
-                    <button type="button" class="btn btn-outline-warning navbar-logout-button">Logout</button>
-                    <span name="statusDot" class="navbar-status-dot online"></span>
-                    <span name="statusDot" class="navbar-status-dot away"></span>
-                    <span name="statusDot" class="navbar-status-dot hidden"></span>
-                </li>
-            </ul>
+                    <button type="button" class="btn btn-outline-danger navbar-logout-button">Logout</button>
         </div>
+        </li>
+        </ul>
+    </div>
     </div>
 </nav>
 
 <!--Users-->
-<div class="row no-gutters">
-    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
-        <div class="users-container">
-            <label>My friends:</label>
-            <ul class="users">
-                <li class="person" data-chat="person1">
-                    <div class="user">
-                        <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
-                        <span class="status online"></span>
-                    </div>
-                    <p class="name">
-                        <span class="name">Steve Bangalter</span>
-                    </p>
-                </li>
-                <li class="person" data-chat="person1">
-                    <div class="user">
-                        <img src="https://www.bootdey.com/img/Content/avatar/avatar1.png" alt="Retail Admin">
-                        <span class="status offline"></span>
-                    </div>
-                    <p class="name">
-                        <span class="name">Steve Bangalter</span>
-                    </p>
-                </li>
-                <li class="person active-user" data-chat="person2">
-                    <div class="user">
-                        <img src="https://www.bootdey.com/img/Content/avatar/avatar2.png" alt="Retail Admin">
-                        <span class="status offline"></span>
-                    </div>
-                    <p class="name">
-                        <span class="name">Peter Gregor</span>
-                    </p>
-                </li>
-                <li class="person" data-chat="person3">
-                    <div class="user">
-                        <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
-                        <span class="status online"></span>
-                    </div>
-                    <p class="name">
-                        <span class="name">Jessica Larson</span>
-                    </p>
-                </li>
-                <li class="person" data-chat="person4">
-                    <div class="user" href="#chat">
-                        <img src="https://www.bootdey.com/img/Content/avatar/avatar4.png" alt="Retail Admin">
-                        <span class="status offline"></span>
-                    </div>
-                    <p class="name">
-                        <span class="name">Lisa Guerrero</span>
-                    </p>
-                </li>
-                <li class="person" data-chat="person5">
-                    <div class="user">
-                        <img src="https://www.bootdey.com/img/Content/avatar/avatar5.png" alt="Retail Admin">
-                        <span class="status online"></span>
-                    </div>
-                    <p class="name">
-                        <span class="name">Michael Jordan</span>
-                    </p>
-                </li>
-            </ul>
+<div class="main-panel">
+    <div class="users-container">
+        <div class="profile-container">
+            <a name="navbarProfileImg" class="navbar-profile-img online" href="#">
+                <img class="img-prof" src="https://avatars.dicebear.com/v2/identicon/82b375a8c1041a6b0ac0f81625d441dc.svg">
+            </a>
+            <div class="status-dots">
+                <span name="statusDot" class="navbar-status-dot online"></span>
+                <span name="statusDot" class="navbar-status-dot away"></span>
+                <span name="statusDot" class="navbar-status-dot hidden"></span>
+            </div>
         </div>
+        <label>My friends:</label>
+        <ul class="users">
+            <li class="person" data-chat="person1">
+                <div class="user">
+                    <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
+                    <span class="status online"></span>
+                </div>
+                <p class="name">
+                    <span class="name">Steve Bangalter</span>
+                </p>
+            </li>
+            <li class="person" data-chat="person1">
+                <div class="user">
+                    <img src="https://www.bootdey.com/img/Content/avatar/avatar1.png" alt="Retail Admin">
+                    <span class="status offline"></span>
+                </div>
+                <p class="name">
+                    <span class="name">Steve Bangalter</span>
+                </p>
+            </li>
+            <li class="person active-user" data-chat="person2">
+                <div class="user">
+                    <img src="https://www.bootdey.com/img/Content/avatar/avatar2.png" alt="Retail Admin">
+                    <span class="status offline"></span>
+                </div>
+                <p class="name">
+                    <span class="name">Peter Gregor</span>
+                </p>
+            </li>
+            <li class="person" data-chat="person3">
+                <div class="user">
+                    <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
+                    <span class="status online"></span>
+                </div>
+                <p class="name">
+                    <span class="name">Jessica Larson</span>
+                </p>
+            </li>
+            <li class="person" data-chat="person4">
+                <div class="user" href="#chat">
+                    <img src="https://www.bootdey.com/img/Content/avatar/avatar4.png" alt="Retail Admin">
+                    <span class="status offline"></span>
+                </div>
+                <p class="name">
+                    <span class="name">Lisa Guerrero</span>
+                </p>
+            </li>
+            <li class="person" data-chat="person5">
+                <div class="user">
+                    <img src="https://www.bootdey.com/img/Content/avatar/avatar5.png" alt="Retail Admin">
+                    <span class="status online"></span>
+                </div>
+                <p class="name">
+                    <span class="name">Michael Jordan</span>
+                </p>
+            </li>
+        </ul>
     </div>
+</div>
 
-    <script type="module" src="users.js"></script>
-    <script type="module" src="navbar.js"></script>
+<script type="module" src="users.js"></script>
+<script type="module" src="navbar.js"></script>
 
-    <!--Chat box-->
+<!--Chat box-->
 
-    </html>
+</html>

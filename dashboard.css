@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400);
 .users-container {
     position: relative;
     padding: 1rem 0;
@@ -118,10 +119,30 @@
 }
 
 .navbar-profile-img {
-    position: absolute;
-    right: 8%;
-    top: 13%;
+    position: relative;
     border-radius: 100%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+.img-prof {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+@media(max-width: 767px) {
+    .navbar-profile-img {
+        margin-left: 20%;
+        margin-bottom: 25%;
+    }
+}
+
+@media(max-width: 767px) {
+    .img-prof {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 .navbar-profile-img.online {
@@ -142,33 +163,54 @@
     top: 15%;
 }
 
+@media (max-width: 767px) {
+    .navbar-logout-button {
+        display: none;
+    }
+}
+
 .navbar-status-dot {
     height: 10px;
     width: 10px;
+    margin-left: 5px;
     border-radius: 50%;
     display: inline-block;
     position: absolute;
     cursor: pointer;
 }
 
+@media (max-width: 767px) {
+    .navbar-status-dot {
+        display: none;
+    }
+}
+
 .navbar-status-dot.online {
     background-color: #9ec94a;
-    right: 7%;
-    top: 15%;
 }
 
 .navbar-status-dot.away {
     background-color: #e9ad2b;
-    right: 7%;
-    top: 42%;
+    margin-top: 15px;
 }
 
 .navbar-status-dot.hidden {
     background-color: #c4d2e2;
-    right: 7%;
-    top: 70%;
+    margin-top: 30px;
 }
 
 .navbar-status-dot.clicked {
     border: 1px solid #929292;
+}
+
+.main-panel {
+    display: inline-flex;
+}
+
+.profile-container {
+    display: flex;
+}
+
+.status-dots {
+    display: block;
 }
