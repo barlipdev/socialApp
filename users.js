@@ -18,3 +18,7 @@ allFriends.forEach((friend) => {
 function loadAllFriends(userid) {
     return repository.getFriendsByUserId(userid);
 }
+
+
+
+

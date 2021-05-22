@@ -1,5 +1,21 @@
 import { User } from '../model/model.js';
 
+const endpoint = 'https://mycorsproxy-social.herokuapp.com/https://barlipdev-social-api.herokuapp.com/users';
+
+fetch(endpoint, {
+    method: 'GET',
+}).then((resp) => resp.json()).then(function (response) {
+    console.info(response);
+    showConsole(response);
+    return response;
+});
+
+function showConsole(data) {
+    data.forEach((user) => {
+        console.log(user.name);
+    })
+}
+
 export class Repository {
     getUser(idUser) {
         //TO DO create connection with API
