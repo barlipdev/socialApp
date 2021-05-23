@@ -1,20 +1,9 @@
-import { User } from '../model/model.js';
+import {
+    User
+} from '../model/model.js';
 
-const endpoint = 'https://mycorsproxy-social.herokuapp.com/https://barlipdev-social-api.herokuapp.com/users';
-
-fetch(endpoint, {
-    method: 'GET',
-}).then((resp) => resp.json()).then(function (response) {
-    console.info(response);
-    showConsole(response);
-    return response;
-});
-
-function showConsole(data) {
-    data.forEach((user) => {
-        console.log(user.name);
-    })
-}
+const registerEndpoint = 'https://mycorsproxy-social.herokuapp.com/https://barlipdev-social-api.herokuapp.com/users/register';
+const loginEndpoint = 'https://mycorsproxy-social.herokuapp.com/https://barlipdev-social-api.herokuapp.com/users/login';
 
 export class Repository {
     getUser(idUser) {
@@ -22,12 +11,44 @@ export class Repository {
     }
 
     register(email, name, surname, login, password, img) {
-        //TO DO send request to API (adding user to database)
-        return user;
+
+        var user = new User(null, name, surname, email, null, password, null, null, null);
+
+        fetch(registerEndpoint, {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(user)
+            })
+            .then(res => {
+                if (res.ok) {
+                    console.log("User added");
+                    console.log(res);
+                    window.location = "login.html";
+                } else {
+                    console.error("Not successful");
+                }
+            })
     }
 
     login(email, password) {
-        //TO DO find user in databse and return
+        var user;
+        fetch(loginEndpoint + "/" + email + "&" + password, {
+                method: "GET",
+            })
+            .then(res => {
+                if (res.ok) {
+                    return res.json();
+                } else {
+                    alert("Login error");
+                }
+            }).then(res => {
+                user = new User(null, res.name, res.surname, res.email, null, res.password, null, null, null);
+                console.log(user);
+                sessionStorage.user = JSON.stringify(user); 
+                window.location = "index.html";
+            })
     }
 
     getUser(userId) {
