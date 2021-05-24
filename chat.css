@@ -37,3 +37,111 @@
     bottom: 0%;
     position: relative;
 }
+
+.chat-container {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    scroll-behavior: smooth;
+    hyphens: auto;
+}
+
+.chat-container::-webkit-scrollbar {
+    display: none;
+}
+
+.user-input-block {
+    display: flex;
+    float: left;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+    background-color: rgb(235, 235, 235);
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px 10px 10px 0px;
+}
+
+.chat-bar-icon {
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    width: 25%;
+    float: right;
+    font-size: 20px;
+}
+
+#chat-icon:hover {
+    opacity: 0.7;
+}
+
+#user-input {
+    width: 75%;
+}
+
+.input-box {
+    float: left;
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    color: #000;
+    background-color: white;
+    outline: none;
+}
+
+.user-message {
+    color: white;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: right;
+    clear: both;
+}
+
+user-message span {
+    line-height: 1.5rem;
+    display: inline-block;
+    background: #5ca6fa;
+    padding: 10px;
+    border-radius: 8px;
+    border-bottom-right-radius: 2px;
+    max-width: 80%;
+    margin-right: 10px;
+    animation: floatup 0.5s forwards;
+}
+
+.friend-message {
+    color: #000;
+    font-family: Helvetica;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: left;
+}
+
+.friend-message span {
+    line-height: 1.5rem;
+    display: inline-block;
+    background: #e0e0e0;
+    padding: 10px;
+    border-radius: 8px;
+    border-bottom-left-radius: 2px;
+    max-width: 80%;
+    margin-left: 10px;
+    animation: floatup 0.5s forwards;
+}
+
+@keyframes floatup {
+    from {
+        transform: translateY(14px);
+        opacity: 0.0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1.0;
+    }
+}
