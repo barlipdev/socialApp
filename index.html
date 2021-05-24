@@ -12,42 +12,132 @@
 </head>
 
 <body>
-
-</body>
-
-<!--Navigation bar module-->
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Social app</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <!--Navigation bar module-->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Social app</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-        <div class="collapse navbar-collapse" id="navbar-list-4">
+            <div class="collapse navbar-collapse" id="navbar-list-4">
+            </div>
+        </div>
+    </nav>
+
+    <!--Users-->
+    <div class="main-panel">
+        <div class="users-container">
+            <div class="profile-container">
+                <a name="navbarProfileImg" class="navbar-profile-img online" href="#">
+                    <img class="img-prof" src="https://avatars.dicebear.com/v2/identicon/82b375a8c1041a6b0ac0f81625d441dc.svg">
+                </a>
+                <div class="status-dots">
+                    <span name="statusDot" class="navbar-status-dot online"></span>
+                    <span name="statusDot" class="navbar-status-dot away"></span>
+                    <span name="statusDot" class="navbar-status-dot hidden"></span>
+                </div>
+                <div class="profile-user-info">
+                    <span class="profile-username">Jan Kowalski</span>
+                    <br>
+                    <span class="profile-description">I'm busy</span>
+
+
+                </div>
+            </div>
+            <span class="profile-logout">Logout ></span>
+            <span class="my-friends-label">My friends</span>
+            <ul class="users">
+                <li class="friend" data-chat="person1">
+                    <div class="user">
+                        <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
+                        <span class="status online"></span>
+                    </div>
+                    <p class="name">
+                        <span class="name">Steve Bangalter</span>
+                    </p>
+                </li>
+                <li class="friend" data-chat="person1">
+                    <div class="user">
+                        <img src="https://www.bootdey.com/img/Content/avatar/avatar1.png" alt="Retail Admin">
+                        <span class="status offline"></span>
+                    </div>
+                    <p class="name">
+                        <span class="name">Steve Bangalter</span>
+                    </p>
+                </li>
+                <li class="friend" data-chat="person2">
+                    <div class="user">
+                        <img src="https://www.bootdey.com/img/Content/avatar/avatar2.png" alt="Retail Admin">
+                        <span class="status offline"></span>
+                    </div>
+                    <p class="name">
+                        <span class="name">Peter Gregor</span>
+                    </p>
+                </li>
+                <li class="friend" data-chat="person3">
+                    <div class="user">
+                        <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
+                        <span class="status online"></span>
+                    </div>
+                    <p class="name">
+                        <span class="name">Jessica Larson</span>
+                    </p>
+                </li>
+                <li class="friend" data-chat="person4">
+                    <div class="user" href="#chat">
+                        <img src="https://www.bootdey.com/img/Content/avatar/avatar4.png" alt="Retail Admin">
+                        <span class="status offline"></span>
+                    </div>
+                    <p class="name">
+                        <span class="name">Lisa Guerrero</span>
+                    </p>
+                </li>
+                <li class="friend" data-chat="person5">
+                    <div class="user">
+                        <img src="https://www.bootdey.com/img/Content/avatar/avatar5.png" alt="Retail Admin">
+                        <span class="status online"></span>
+                    </div>
+                    <p class="name">
+                        <span class="name">Michael Jordan</span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <label class="posts-label">Posts</label>
+            <div class="post-creator-container card">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">Make
+                        a post</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                            <div class="form-group">
+                                <textarea class="post-textarea" id="message" placeholder="What are you thinking?"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary post-publish-button">Publish</button>
+                </div>
+            </div>
         </div>
     </div>
-</nav>
 
-<!--Users-->
-<div class="main-panel">
-    <div class="users-container">
-        <div class="profile-container">
-            <a name="navbarProfileImg" class="navbar-profile-img online" href="#">
-                <img class="img-prof" src="https://avatars.dicebear.com/v2/identicon/82b375a8c1041a6b0ac0f81625d441dc.svg">
-            </a>
-            <div class="status-dots">
-                <span name="statusDot" class="navbar-status-dot online"></span>
-                <span name="statusDot" class="navbar-status-dot away"></span>
-                <span name="statusDot" class="navbar-status-dot hidden"></span>
-            </div>
-            <div class="profile-user-info">
-                <span class="profile-username">Jan Kowalski</span>
-                <span class="profile-logout">Logout ></span>
-                <span class="profile-description">I'm busy</span>
-            </div>
-        </div>
-        <span class="my-friends-label">My friends</span>
-        <ul class="users">
-            <li class="friend" data-chat="person1">
+    <script type="module" src="users.js"></script>
+    <script type="module" src="navbar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--Recent Users-->
+
+    <div class="recent-users-container">
+        <span class="my-friends-label">Recent Users</span>
+        <ul class="recent-users">
+            <li class="person" data-chat="person1">
                 <div class="user">
                     <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
                     <span class="status online"></span>
@@ -55,8 +145,11 @@
                 <p class="name">
                     <span class="name">Steve Bangalter</span>
                 </p>
+                <div class="invite-div">
+                    <button type="submit" class="recent-users-button"></button>
+                </div>
             </li>
-            <li class="friend" data-chat="person1">
+            <li class="person" data-chat="person1">
                 <div class="user">
                     <img src="https://www.bootdey.com/img/Content/avatar/avatar1.png" alt="Retail Admin">
                     <span class="status offline"></span>
@@ -64,8 +157,11 @@
                 <p class="name">
                     <span class="name">Steve Bangalter</span>
                 </p>
+                <div class="invite-div">
+                    <button type="submit" class="recent-users-button"></button>
+                </div>
             </li>
-            <li class="friend" data-chat="person2">
+            <li class="person" data-chat="person2">
                 <div class="user">
                     <img src="https://www.bootdey.com/img/Content/avatar/avatar2.png" alt="Retail Admin">
                     <span class="status offline"></span>
@@ -73,8 +169,11 @@
                 <p class="name">
                     <span class="name">Peter Gregor</span>
                 </p>
+                <div class="invite-div">
+                    <button type="submit" class="recent-users-button"></button>
+                </div>
             </li>
-            <li class="friend" data-chat="person3">
+            <li class="person" data-chat="person3">
                 <div class="user">
                     <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
                     <span class="status online"></span>
@@ -82,8 +181,11 @@
                 <p class="name">
                     <span class="name">Jessica Larson</span>
                 </p>
+                <div>
+                    <button type="submit" class="recent-users-button"></button>
+                </div>
             </li>
-            <li class="friend" data-chat="person4">
+            <li class="person" data-chat="person4">
                 <div class="user" href="#chat">
                     <img src="https://www.bootdey.com/img/Content/avatar/avatar4.png" alt="Retail Admin">
                     <span class="status offline"></span>
@@ -91,8 +193,11 @@
                 <p class="name">
                     <span class="name">Lisa Guerrero</span>
                 </p>
+                <div>
+                    <button type="submit" class="recent-users-button"></button>
+                </div>
             </li>
-            <li class="friend" data-chat="person5">
+            <li class="person" data-chat="person5">
                 <div class="user">
                     <img src="https://www.bootdey.com/img/Content/avatar/avatar5.png" alt="Retail Admin">
                     <span class="status online"></span>
@@ -100,115 +205,14 @@
                 <p class="name">
                     <span class="name">Michael Jordan</span>
                 </p>
+                <div>
+                    <button type="submit" class="recent-users-button"></button>
+                </div>
             </li>
         </ul>
     </div>
-    <div>
-        <label class="posts-label">Posts</label>
-        <div class="post-creator-container card">
-            <div class="card-header">
-                <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">Make
-                        a post</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="card-body">
-                <div class="tab-content">
-                    <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
-                        <div class="form-group">
-                            <textarea class="post-textarea" id="message" placeholder="What are you thinking?"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary post-publish-button">Publish</button>
-            </div>
-        </div>
-    </div>
-</div>
+</body>
 
-<script type="module" src="users.js"></script>
-<script type="module" src="navbar.js"></script>
 
-<!--Recent Users-->
-
-<div class="recent-users-container">
-    <span class="my-friends-label">Recent Users</span>
-    <ul class="recent-users">
-        <li class="person" data-chat="person1">
-            <div class="user">
-                <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
-                <span class="status online"></span>
-            </div>
-            <p class="name">
-                <span class="name">Steve Bangalter</span>
-            </p>
-            <div class="invite-div">
-                <button type="submit" class="recent-users-button"></button>
-            </div>
-        </li>
-        <li class="person" data-chat="person1">
-            <div class="user">
-                <img src="https://www.bootdey.com/img/Content/avatar/avatar1.png" alt="Retail Admin">
-                <span class="status offline"></span>
-            </div>
-            <p class="name">
-                <span class="name">Steve Bangalter</span>
-            </p>
-            <div class="invite-div">
-                <button type="submit" class="recent-users-button"></button>
-            </div>
-        </li>
-        <li class="person" data-chat="person2">
-            <div class="user">
-                <img src="https://www.bootdey.com/img/Content/avatar/avatar2.png" alt="Retail Admin">
-                <span class="status offline"></span>
-            </div>
-            <p class="name">
-                <span class="name">Peter Gregor</span>
-            </p>
-            <div class="invite-div">
-                <button type="submit" class="recent-users-button"></button>
-            </div>
-        </li>
-        <li class="person" data-chat="person3">
-            <div class="user">
-                <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
-                <span class="status online"></span>
-            </div>
-            <p class="name">
-                <span class="name">Jessica Larson</span>
-            </p>
-            <div>
-                <button type="submit" class="recent-users-button"></button>
-            </div>
-        </li>
-        <li class="person" data-chat="person4">
-            <div class="user" href="#chat">
-                <img src="https://www.bootdey.com/img/Content/avatar/avatar4.png" alt="Retail Admin">
-                <span class="status offline"></span>
-            </div>
-            <p class="name">
-                <span class="name">Lisa Guerrero</span>
-            </p>
-            <div>
-                <button type="submit" class="recent-users-button"></button>
-            </div>
-        </li>
-        <li class="person" data-chat="person5">
-            <div class="user">
-                <img src="https://www.bootdey.com/img/Content/avatar/avatar5.png" alt="Retail Admin">
-                <span class="status online"></span>
-            </div>
-            <p class="name">
-                <span class="name">Michael Jordan</span>
-            </p>
-            <div>
-                <button type="submit" class="recent-users-button"></button>
-            </div>
-        </li>
-    </ul>
-</div>
 
 </html>
