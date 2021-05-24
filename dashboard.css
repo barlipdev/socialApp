@@ -101,6 +101,9 @@
 }
 
 @media (max-width: 767px) {
+    .recent-users {
+        overflow-x: hidden;
+    }
     .recent-users .person {
         position: relative;
         display: inline-block;
@@ -211,6 +214,9 @@
 }
 
 @media (max-width: 767px) {
+    .users {
+        overflow-x: hidden;
+    }
     .users .friend .user img {
         width: 30px;
         height: 30px;
