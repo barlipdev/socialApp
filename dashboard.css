@@ -20,44 +20,56 @@
 }
 
 
-/*Users*/
+/*Recent Users*/
 
-.users {
+.recent-users-container {
+    position: relative;
+    border-right: 1px solid #e6ecf3;
+    width: 300px;
+    height: auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.recent-users {
     padding: 0;
 }
 
-.users .person {
+.recent-users .person {
     position: relative;
+    display: inline-flex;
     width: 100%;
     padding: 10px 1rem;
     cursor: pointer;
     border-bottom: 1px solid #f0f4f8;
 }
 
-.users .person:hover {
+.recent-users .person:hover {
     background-color: #ffffff;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#e9eff5), to(#ffffff));
     background-image: -webkit-linear-gradient(right, #e9eff5, #ffffff);
     background-image: -moz-linear-gradient(right, #e9eff5, #ffffff);
 }
 
-.users .person.active-user {
+.recent-users .person.active-user {
     background-color: #ffffff;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#ececec), to(#ffffff));
     background-image: -webkit-linear-gradient(right, #ececec, #ffffff);
 }
 
-.users .person:last-child {
+.recent-users .person:last-child {
     border-bottom: 0;
 }
 
-.users .person .user {
+.recent-users .person .user {
     display: inline-block;
     position: relative;
     margin-right: 10px;
 }
 
-.users .person .user img {
+.recent-users .person .user img {
     width: 48px;
     height: 48px;
     -webkit-border-radius: 50px;
@@ -65,7 +77,112 @@
     border-radius: 50px;
 }
 
-.users .person .user .status {
+.recent-users .person p.name {
+    font-weight: 600;
+    font-size: .85rem;
+    width: 180px;
+    display: inline-block;
+}
+
+.invite-div {
+    margin: auto;
+}
+
+.recent-users-button {
+    margin-top: 15px;
+    background-color: #0d6efd;
+    border-radius: 10%;
+    border-width: 0px;
+    color: white;
+}
+
+.recent-users-button::before {
+    content: 'Invite';
+}
+
+@media (max-width: 767px) {
+    .recent-users .person {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        padding: 10px 1rem;
+        cursor: pointer;
+        border-bottom: 1px solid #f0f4f8;
+    }
+    .recent-users .person .user img {
+        width: 30px;
+        height: 30px;
+    }
+    .recent-users .person p.name {
+        display: none;
+    }
+    .recent-users .person p.name-time .time {
+        display: none;
+    }
+    .recent-users-container {
+        width: 60px;
+    }
+    .recent-users-container label {
+        display: none;
+    }
+    .recent-users-button {
+        margin: auto;
+        margin-left: 5px;
+        border-radius: 100%;
+        font-size: 10px;
+    }
+    .recent-users-button::before {
+        content: '+';
+    }
+}
+
+
+/*Users*/
+
+.users {
+    padding: 0;
+}
+
+.users .friend {
+    position: relative;
+    width: 100%;
+    padding: 10px 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f4f8;
+}
+
+.users .friend:hover {
+    background-color: #ffffff;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#e9eff5), to(#ffffff));
+    background-image: -webkit-linear-gradient(right, #e9eff5, #ffffff);
+    background-image: -moz-linear-gradient(right, #e9eff5, #ffffff);
+}
+
+.users .friend.active-user {
+    background-color: #ffffff;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ececec), to(#ffffff));
+    background-image: -webkit-linear-gradient(right, #ececec, #ffffff);
+}
+
+.users .friend:last-child {
+    border-bottom: 0;
+}
+
+.users .friend .user {
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+}
+
+.users .friend .user img {
+    width: 48px;
+    height: 48px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+}
+
+.users .friend .user .status {
     width: 10px;
     height: 10px;
     -webkit-border-radius: 100px;
@@ -77,29 +194,29 @@
     right: 0;
 }
 
-.users .person .user .status.online {
+.users .friend .user .status.online {
     background: #9ec94a;
 }
 
-.users .person .user .status.offline {
+.users .friend .user .status.offline {
     background: #c4d2e2;
 }
 
-.users .person p.name {
+.users .friend p.name {
     font-weight: 600;
     font-size: .85rem;
     display: inline-block;
 }
 
 @media (max-width: 767px) {
-    .users .person .user img {
+    .users .friend .user img {
         width: 30px;
         height: 30px;
     }
-    .users .person p.name {
+    .users .friend p.name {
         display: none;
     }
-    .users .person p.name-time .time {
+    .users .friend p.name-time .time {
         display: none;
     }
     .users-container {
@@ -239,8 +356,9 @@
 }
 
 .my-friends-label {
-    font-weight: 400;
-    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 15px;
     margin-left: 15px;
 }
 

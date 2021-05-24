@@ -27,3 +27,17 @@
     font-size: 32px;
     font-weight: 400;
 }
+
+@media (max-width: 1233px) {
+    .post-creator-container {
+        height: 200px;
+        width: 500px;
+    }
+}
+
+@media (max-width: 767px) {
+    .post-creator-container {
+        height: 200px;
+        width: 300px;
+    }
+}

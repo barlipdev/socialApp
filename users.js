@@ -1,6 +1,6 @@
 import { Repository } from './repo/repository.js'
 
-var allFriends = document.querySelectorAll(".person");
+var allFriends = document.querySelectorAll(".friend");
 var repository = new Repository();
 
 allFriends.forEach((friend) => {
@@ -18,7 +18,3 @@ allFriends.forEach((friend) => {
 function loadAllFriends(userid) {
     return repository.getFriendsByUserId(userid);
 }
-
-
-
-
