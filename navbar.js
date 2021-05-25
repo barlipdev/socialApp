@@ -51,6 +51,10 @@ $('.description-change-button').click(function() {
 });
 
 $('#save-description').click(function() {
-    $('.profile-description').text($('#descInput').val());
+    if ($('#descInput').val() != "") {
+        $('.profile-description').text($('#descInput').val());
+    } else {
+        $('.profile-description').text("Update your status ! :)");
+    }
     $('.description-edit').css("display", "none");
 })
