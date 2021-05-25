@@ -94,7 +94,7 @@
 }
 
 .user-message {
-    color: white;
+    color: w#000;
     font-family: Helvetica;
     font-size: 16px;
     font-weight: normal;
@@ -102,7 +102,7 @@
     clear: both;
 }
 
-user-message span {
+.user-message span {
     line-height: 1.5rem;
     display: inline-block;
     background: #5ca6fa;

@@ -9,6 +9,8 @@
     <link href='https://css.gg/arrow-right-r.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -126,7 +128,7 @@
 
         <!--Chat box-->
         <div class="messenger">
-            <button class="mess-button" id="chat-button">Name
+            <button class="mess-button" id="chat-button"><span id= "chat-name">Name</span> 
                 <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
             </button>
             
@@ -145,17 +147,18 @@
                             <div class="user-input-block">
                                 
                                 <div id="user-input">
-                                    <input type="text" class="input-box" id="textInput" placeholder="Tap 'Enter' to send">
+                                    <input type="text" class="input-box" id="text-input" 
+                                    placeholder="Tap 'Enter' to send">
                                     <p></p>
                                 </div>
 
                                 <div class="chat-bar-icons">
-                                    <i id="chat-icon" class="fa fa-fw fa-heart" style="color: red;"></i>
+                                    <i id="chat-icon" class="fa fa-fw fa-heart" onclick="heart()"></i>
                                     <i id="chat-icon" class="fa fa-fw fa-send"></i>
                                 </div>
                             </div>
 
-                            <div class="chat-bar-bottom">
+                            <div id="chat-bar-bottom">
                                 <p></p>
                             </div>
                         </div>
@@ -168,5 +171,6 @@
 
 <script type="module" src="users.js"></script>
 <script type="module" src="navbar.js"></script>
+<script src="chat.js"></script>
 
 </html>
