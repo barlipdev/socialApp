@@ -3,18 +3,19 @@ import { User } from './model/model.js'
 const endpoint = 'https://mycorsproxy-social.herokuapp.com/https://barlipdev-social-api.herokuapp.com/users';
 var allFriends = document.querySelectorAll(".friend");
 
+//clicking in user object
 allFriends.forEach((friend) => {
-    friend.addEventListener("click", () => {
-        //TO DO open chat window
-        friend.classList.add("active-user");
-        allFriends.forEach((closedFriend) => {
-            if (closedFriend != friend) {
-                closedFriend.classList.remove("active-user");
-            }
+        friend.addEventListener("click", () => {
+            //TO DO open chat window
+            friend.classList.add("active-user");
+            allFriends.forEach((closedFriend) => {
+                if (closedFriend != friend) {
+                    closedFriend.classList.remove("active-user");
+                }
+            })
         })
     })
-})
-
+    //setting user profile photo
 $(".img-prof").click(function() {
     $("#imgupload").trigger('click');
 })
@@ -34,14 +35,15 @@ $("#imgupload").change(function(event) {
     axios.post(endpoint + "/photo", formData, config);
 })
 
-
+//getting logged user
 getUser("60a948a51c6f265f2c7ba943");
 
-
+//loading user friends
 function loadAllFriends(userid) {
     return repository.getFriendsByUserId(userid);
 }
 
+//getting user from api
 function getUser(idUser) {
     var json;
     var user = new User();

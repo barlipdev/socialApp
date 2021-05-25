@@ -213,6 +213,34 @@
     display: inline-block;
 }
 
+.description-change-button {
+    font-size: 8px;
+    margin-left: 10px;
+    background-color: #0d6efd;
+    border-radius: 10%;
+    border-width: 0px;
+    color: white;
+}
+
+.description-edit {
+    display: none;
+    margin-bottom: 5px;
+}
+
+.description-edit input {
+    margin-left: 15px;
+    height: 20px;
+}
+
+.description-edit button {
+    font-size: 13px;
+    margin-left: 10px;
+    background-color: #0d6efd;
+    border-radius: 10%;
+    border-width: 0px;
+    color: white;
+}
+
 @media (max-width: 767px) {
     .users {
         overflow-x: hidden;
@@ -231,6 +259,9 @@
         width: 60px;
     }
     .users-container label {
+        display: none;
+    }
+    .description-change-button {
         display: none;
     }
 }
