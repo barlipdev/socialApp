@@ -2,36 +2,31 @@ import { User } from '../model/model.js';
 
 const endpoint = 'https://mycorsproxy-social.herokuapp.com/https://barlipdev-social-api.herokuapp.com/users';
 
-fetch(endpoint, {
-    method: 'GET',
-}).then((resp) => resp.json()).then(function (response) {
-    console.info(response);
-    showConsole(response);
-    return response;
-});
-
-function showConsole(data) {
-    data.forEach((user) => {
-        console.log(user.name);
-    })
-}
-
 export class Repository {
     getUser(idUser) {
-        //TO DO create connection with API
+        var json;
+        var user = new User();
+        fetch(endpoint + "/" + idUser, {
+            method: 'GET',
+        }).then((resp) => resp.json()).then(response => {
+            json = JSON.parse(JSON.stringify(response));
+            user.id = json.id;
+            user.email = json.email;
+            user.name = json.name;
+            user.surname = json.surname;
+            console.log(user);
+            return user;
+        });
+
     }
 
     register(email, name, surname, login, password, img) {
         //TO DO send request to API (adding user to database)
-        return user;
+        return new User();
     }
 
     login(email, password) {
         //TO DO find user in databse and return
-    }
-
-    getUser(userId) {
-        //TO DO fetch user
     }
 
     getFriendsByUserId(userId) {
