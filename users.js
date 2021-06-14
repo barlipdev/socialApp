@@ -36,7 +36,7 @@ $("#imgupload").change(function(event) {
 })
 
 //getting logged user
-getUser("60a948a51c6f265f2c7ba943");
+//getUser("60a948a51c6f265f2c7ba943");
 
 //loading user friends
 function loadAllFriends(userid) {

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login-register.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <div class="center">
+        <div class="header">
+            <h1>Create Account</h1>
+        </div>
+
+        <form class="form" id="form">
+            <div class="form-control">
+                <input type="text" name="name" required>
+                <span></span>
+                <label>Name</label>
+            </div>
+
+            <div class="form-control">
+                <input type="text" name="surname" required>
+                <span></span>
+                <label>Surname</label>
+            </div>
+
+            <div class="form-control">
+                <input type="email" name="email" required>
+                <span></span>
+                <label>Email</label>
+            </div>
+
+            <div class="form-control">
+                <input type="password" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" required>
+                <span></span>
+                <label>Password</label>
+            </div>
+
+            <input type="submit" value="Register">
+            <div class="space"></div>
+        </form>
+    </div>
+</body>
+
+<script type="module" src="register.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</html>

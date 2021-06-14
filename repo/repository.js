@@ -1,8 +1,17 @@
 import { User } from '../model/model.js';
 
-const endpoint = 'https://mycorsproxy-social.herokuapp.com/https://barlipdev-social-api.herokuapp.com/users';
+const endpoint = 'https://mycorsproxy-social.herokuapp.com/https://barlipdev-social-api.herokuapp.com';
 
 export class Repository {
+
+    constructor() {
+        if (!!Repository.instance) {
+            return Repository.instance;
+        }
+        Repository.instance = this;
+        return this;
+    }
+
     getUser(idUser) {
         var json;
         var user = new User();
@@ -20,20 +29,36 @@ export class Repository {
 
     }
 
-    register(email, name, surname, login, password, img) {
-        //TO DO send request to API (adding user to database)
-        return new User();
+    async register(email, password, name, surname) {
+        try {
+            const config = {
+                headers: {
+                    "content-type": "application/json"
+                }
+            };
+            let res = await axios.post(endpoint + "/register", { "email": email, "password": password, "name": name, "surname": surname }, config);
+            return res.data;
+        } catch (err) {
+            console.log(err);
+        }
+
     }
 
-    login(email, password) {
-        //TO DO find user in databse and return
+    async login(email, password) {
+        try {
+            const config = {
+                headers: {
+                    "content-type": "application/json"
+                }
+            };
+            let res = await axios.post(endpoint + "/login", { "email": email, "password": password }, config);
+            return res.data;
+        } catch (err) {
+            console.log(err);
+        }
     }
 
     getFriendsByUserId(userId) {
         //TO DO fetch users friends
     }
 }
-
-function genId() {
-    return '_' + Math.random().toString(36).substr(2, 9);
-};

@@ -41,7 +41,7 @@ setInterval(function() {
             "content-type": "multipart/form-data"
         }
     };
-    axios.post(endpoint + "/status", formData, config);
+    //axios.post(endpoint + "/status", formData, config);
 
 }, 5000);
 
