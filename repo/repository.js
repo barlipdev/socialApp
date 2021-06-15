@@ -74,7 +74,19 @@ export class Repository {
         return res.data;
     }
 
-    getFriendsByUserId(userId) {
-        //TO DO fetch users friends
+    async getRecentUsers(uid, jwt) {
+        var auth = "Bearer " + jwt;
+        try {
+            const config = {
+                headers: {
+                    "content-type": "application/json",
+                    "Authorization": auth
+                }
+            };
+            let res = await axios.get(endpoint + "/users/recent/" + uid, config);
+            return res.data;
+        } catch (err) {
+            console.log(err);
+        }
     }
 }
