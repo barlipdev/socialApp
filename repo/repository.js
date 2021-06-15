@@ -12,20 +12,20 @@ export class Repository {
         return this;
     }
 
-    getUser(idUser) {
-        var json;
-        var user = new User();
-        fetch(endpoint + "/" + idUser, {
-            method: 'GET',
-        }).then((resp) => resp.json()).then(response => {
-            json = JSON.parse(JSON.stringify(response));
-            user.id = json.id;
-            user.email = json.email;
-            user.name = json.name;
-            user.surname = json.surname;
-            console.log(user);
-            return user;
-        });
+    async getUser(uid, jwt) {
+        var auth = "Bearer " + jwt;
+        try {
+            const config = {
+                headers: {
+                    "content-type": "application/json",
+                    "Authorization": auth
+                }
+            };
+            let res = await axios.get(endpoint + "/users/" + uid, config);
+            return res.data;
+        } catch (err) {
+            console.log(err);
+        }
 
     }
 
@@ -56,6 +56,22 @@ export class Repository {
         } catch (err) {
             console.log(err);
         }
+    }
+
+    async setProfilePhoto(id, file, jwt) {
+        var auth = "Bearer " + jwt;
+        var formData = new FormData();
+        formData.append("id", id);
+        formData.append("profileImage", file);
+
+        const config = {
+            headers: {
+                "content-type": "multipart/form-data",
+                "Authorization": auth
+            }
+        };
+        let res = await axios.post(endpoint + "/users/photo", formData, config);
+        return res.data;
     }
 
     getFriendsByUserId(userId) {
