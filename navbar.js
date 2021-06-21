@@ -4,7 +4,6 @@ var statusDots = $('[name=statusDot]');
 var profileImg = $('[name=navbarProfileImg');
 var repository = new Repository();
 
-console.log(statusDots);
 statusDots.each(function(dot) {
     $(this).click(function() {
         $(this).addClass('clicked');
