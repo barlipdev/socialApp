@@ -1,6 +1,8 @@
+import { Repository } from './repo/repository.js';
+
 var statusDots = document.getElementsByName("statusDot")
 var profileImg = document.getElementsByName("navbarProfileImg")
-const endpoint = 'https://mycorsproxy-social.herokuapp.com/https://barlipdev-social-api.herokuapp.com/users';
+var repository = new Repository();
 
 statusDots.forEach((dot) => {
     dot.addEventListener("click", () => {
@@ -27,7 +29,8 @@ statusDots.forEach((dot) => {
 //update user status every 5 sec
 setInterval(function() {
     var formData = new FormData();
-    formData.append("id", "60a948a51c6f265f2c7ba943");
+    //setting user status
+    formData.append("id", window.sessionStorage.getItem('uid'));
     if (profileImg[0].classList.contains("online")) {
         formData.append("status", "online");
     } else if (profileImg[0].classList.contains("away")) {
@@ -35,15 +38,20 @@ setInterval(function() {
     } else if (profileImg[0].classList.contains("offline")) {
         formData.append("status", "offline");
     }
+    repository.setAvailable(formData, window.sessionStorage.getItem('status'));
+}, 10000);
 
-    const config = {
-        headers: {
-            "content-type": "multipart/form-data"
-        }
-    };
-    //axios.post(endpoint + "/status", formData, config);
-
-}, 5000);
+setInterval(function() {
+    //getting freinds status
+    $('.friend').each(function() {
+        console.log($(this).attr('id'));
+        repository.getAvailable($(this).attr('id'), window.sessionStorage.getItem('status'))
+            .then(status => {
+                $(this).children('.user').children('.status').attr("class", "status " + status);
+                console.log(status);
+            })
+    })
+}, 15000)
 
 //changing profile description
 $('.description-change-button').click(function() {

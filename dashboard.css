@@ -207,6 +207,10 @@
     background: #c4d2e2;
 }
 
+.users .friend .user .status.away {
+    background: #e9ad2b;
+}
+
 .users .friend p.name {
     font-weight: 600;
     font-size: .85rem;
