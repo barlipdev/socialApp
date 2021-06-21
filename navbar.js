@@ -1,27 +1,25 @@
 import { Repository } from './repo/repository.js';
 
-var statusDots = document.getElementsByName("statusDot")
-var profileImg = document.getElementsByName("navbarProfileImg")
+var statusDots = $('[name=statusDot]');
+var profileImg = $('[name=navbarProfileImg');
 var repository = new Repository();
 
-statusDots.forEach((dot) => {
-    dot.addEventListener("click", () => {
-        dot.classList.add("clicked");
-        statusDots.forEach((other) => {
-            if (other != dot) {
-                other.classList.remove("clicked");
+console.log(statusDots);
+statusDots.each(function(dot) {
+    $(this).click(function() {
+        $(this).addClass('clicked');
+        statusDots.each(function(index) {
+            if (index != dot) {
+                $(this).removeClass('clicked');
             }
 
         })
-        if (dot.classList.contains("online")) {
-            profileImg[0].classList.remove("away", "hidden")
-            profileImg[0].classList.add('online')
-        } else if (dot.classList.contains("away")) {
-            profileImg[0].classList.remove("online", "hidden")
-            profileImg[0].classList.add('away')
-        } else if (dot.classList.contains("hidden")) {
-            profileImg[0].classList.remove("online", "away")
-            profileImg[0].classList.add('hidden')
+        if ($(this).hasClass('online')) {
+            profileImg.attr('class', 'navbar-profile-img online')
+        } else if ($(this).hasClass('away')) {
+            profileImg.attr('class', 'navbar-profile-img away')
+        } else if ($(this).hasClass('hidden')) {
+            profileImg.attr('class', 'navbar-profile-img hidden')
         }
     })
 })
@@ -31,12 +29,12 @@ setInterval(function() {
     var formData = new FormData();
     //setting user status
     formData.append("id", window.sessionStorage.getItem('uid'));
-    if (profileImg[0].classList.contains("online")) {
+    if (profileImg.hasClass('online')) {
         formData.append("status", "online");
-    } else if (profileImg[0].classList.contains("away")) {
+    } else if (profileImg.hasClass('away')) {
         formData.append("status", "away");
-    } else if (profileImg[0].classList.contains("offline")) {
-        formData.append("status", "offline");
+    } else if (profileImg.hasClass('hidden')) {
+        formData.append("status", "hidden");
     }
     repository.setAvailable(formData, window.sessionStorage.getItem('status'));
 }, 10000);
